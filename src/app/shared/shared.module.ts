@@ -1,3 +1,6 @@
+import { CanActivateAdminService } from './can-activate/can-activate-admin.service';
+import { CanActivateLoggedService } from './can-activate/can-activate-logged.service';
+import { CanActivateLoginService } from './can-activate/can-activate-login.service';
 import { CheatsheetService } from './providers/cheatsheet.service';
 import { CategoryService } from './providers/category.service';
 import { AuthService } from './providers/auth.service';
@@ -17,7 +20,10 @@ export class SharedModule {
     providers: [
       AuthService,
       CategoryService,
-      CheatsheetService
+      CheatsheetService,
+      CanActivateLoginService,
+      CanActivateLoggedService,
+      CanActivateAdminService
     ]
   };
 }

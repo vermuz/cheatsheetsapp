@@ -1,3 +1,5 @@
+import { CanActivateAdminService } from './shared/can-activate/can-activate-admin.service';
+import { CanActivateLoggedService } from './shared/can-activate/can-activate-logged.service';
 import { AuthConfig, AuthHttp } from 'angular2-jwt';
 import { SharedModule } from './shared/shared.module';
 import { MenuModule } from './menu/menu.module';
@@ -16,19 +18,28 @@ const appRoutes: Routes = [
   },
   {
     path: 'categories',
-    loadChildren: 'app/category/category.module#CategoryModule'
+    loadChildren: 'app/category/category.module#CategoryModule',
+    canActivate: [CanActivateLoggedService]
   },
   {
     path: 'languages',
-    loadChildren: 'app/language/language.module#LanguageModule'
+    loadChildren: 'app/language/language.module#LanguageModule',
+    canActivate: [CanActivateLoggedService]
   },
   {
     path: 'cheatsheets',
-    loadChildren: 'app/cheatsheet/cheatsheet.module#CheatsheetModule'
+    loadChildren: 'app/cheatsheet/cheatsheet.module#CheatsheetModule',
+    canActivate: [CanActivateLoggedService]
   },
   {
     path: 'users',
-    loadChildren: 'app/user/user.module#UserModule'
+    loadChildren: 'app/user/user.module#UserModule',
+    canActivate: [CanActivateAdminService]
+  },
+  {
+    path: 'profile',
+    loadChildren: 'app/profile/profile.module#ProfileModule',
+    canActivate: [CanActivateLoggedService]
   },
   {
     path: 'auth',

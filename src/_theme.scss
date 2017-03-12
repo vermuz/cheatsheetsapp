@@ -135,10 +135,17 @@ $color-danger: #FF4100;
 
 @media (max-width: 991px) {
     .btn-login {
-        width: 100%;
+        margin-top: 1rem;
+        width: 30%;
     }
 
     .nav-item {
         text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .btn-login {
+        width: 50%;
     }
 }

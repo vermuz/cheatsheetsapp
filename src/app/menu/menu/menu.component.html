@@ -3,23 +3,23 @@
     aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
-  <a class="logo" href="#"></a>
+  <a class="logo" [routerLink]="['/home']"></a>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav ml-auto mr-4 my-lg-0 my-md-4" *ngIf="user">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Categories</a>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/categories']" >Categories</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Languages</a>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/languages']">Languages</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cheatsheets</a>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/cheatsheets']">Cheatsheets</a>
       </li>
-      <li class="nav-item" *ngIf="loggedAdmin">
-        <a class="nav-link" href="#">Users</a>
+      <li class="nav-item" *ngIf="loggedAdmin" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/users']">Users</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Profile</a>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/profile']">Profile</a>
       </li>
     </ul>
     <ul class="navbar-nav" [ngClass]="{'ml-auto': !user}">

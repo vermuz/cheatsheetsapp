@@ -24,8 +24,10 @@ export class MenuComponent implements OnInit {
       }
     );
 
-    // Force refresh
-    this._authService.isLogged().subscribe();
+    this._authService.getProfile().subscribe(
+      user => this.user = user,
+      error => console.log(error)
+    );
   }
 
   logout(){

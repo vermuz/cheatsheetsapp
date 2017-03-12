@@ -53,6 +53,18 @@ export class AuthService {
     return Observable.of(this.logged);
   }
 
+  getProfile(): Observable<IUser> {
+    if(this.user) return Observable.of(this.user);
+
+    return this.isLogged()
+      .flatMap((isLogged:boolean) => {
+        return this.getLoggedUser().map(
+          user => this.user
+        );
+      })
+      .catch(error => Observable.of(null));
+  }
+
   emitStatus() {
     profile$.emit(this.user);
   }
