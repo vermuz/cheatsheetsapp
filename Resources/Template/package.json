@@ -1,0 +1,17 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "lite-server",
+    "sass-watch": "sass --watch ./scss:./css/",
+    "start": "concurrently \"npm run sass-watch\" \"npm run serve\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^3.4.0",
+    "lite-server": "^2.3.0"
+  }
+}

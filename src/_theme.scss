@@ -1,0 +1,144 @@
+// Palette URL: http://paletton.com/#uid=33x0u0k++FxvyZJUn+V+WsI+cmr
+$color-primary: #006CC2;
+$color-secondary: #004173;
+$color-light: #E4F1FB;
+$color-warning: #FFBC00;
+$color-danger: #FF4100;
+
+.bg-primary {
+    background-color: $color-primary!important;
+}
+
+.bg-secondary {
+    background-color: $color-secondary!important;
+}
+
+.bg-light {
+    background-color: $color-light!important;
+}
+
+.bg-warning {
+    background-color: $color-warning!important;
+}
+
+.bg-danger {
+    background-color: $color-danger!important;
+}
+
+.bg-white {
+    background-color: #FFF;
+}
+
+.color-primary {
+    color: $color-primary!important;
+}
+
+.color-secondary {
+    color: $color-secondary!important;
+}
+
+.color-light {
+    color: $color-light!important;
+}
+
+.color-warning {
+    color: $color-warning!important;
+}
+
+.color-danger {
+    color: $color-danger!important;
+}
+
+.btn-primary {
+    background-color: $color-primary;
+    color: #FFF;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-secondary;
+        color: #FFF;
+    }
+    &:hover, &:active, &:focus {
+        text-decoration: none
+    }
+}
+
+.btn-secondary {
+    background-color: $color-secondary;
+    color: #FFF;
+    cursor: pointer;
+    &:hover {
+        background-color: #FFF!important;
+        color: $color-secondary!important;
+    }
+    &:hover, &:active, &:focus {
+        text-decoration: none
+    }
+}
+
+.btn-white {
+    background-color: #FFF;
+    color: $color-secondary;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-secondary!important;
+        color: #FFF!important;
+    }
+    &:hover, &:active, &:focus {
+        text-decoration: none
+    }
+}
+
+.btn-link {
+    color: $color-secondary;
+}
+
+.btn-link-nav {
+    color: #FFF;
+}
+
+.nav-item {
+    &.active a{
+        color: $color-light!important;
+        box-shadow: inset 0px -1px 0px 0px rgba(255,255,255,1);
+    }
+}
+
+.nav-link {
+    color: #FFF!important;
+    &:hover {
+        color: $color-light!important;
+        box-shadow: inset 0px -1px 0px 0px rgba(255,255,255,1);
+    }
+}
+
+.list-group {
+    li {
+        border-top: thin solid $color-light;
+
+    }
+}
+
+.list-group-item {
+    color: $color-secondary;
+}
+
+.list-group-item-action {
+    &:hover {
+        background-color: $color-light;
+        cursor: pointer;
+    }
+}
+
+.btn-login {
+    padding: inherit 1.5rem;
+}
+
+@media (max-width: 991px) {
+    .btn-login {
+        width: 100%;
+    }
+
+    .nav-item {
+        text-align: center;
+    }
+}

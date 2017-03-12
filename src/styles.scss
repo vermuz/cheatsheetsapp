@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'theme';
+
+.logo {
+    background: url("/assets/images/logo.svg");
+    width: 21rem;
+    min-height: 4rem;
+    
+    background-repeat: no-repeat;
+    background-size: 18rem;
+    background-position: center;
+}
+/*
+.nav-item {
+    & a {
+        font-size: 1.2rem;
+    }
+}
+*/
+.card-category {
+    & .card-header {
+        color: #FFF!important;
+        background-color: $color-secondary;
+        font-size: 1.7rem;
+    }
+}
+
+.card-asside {
+    & .card-header {
+        color: $color-secondary!important;
+        background-color: $color-light;
+        font-size: 1.2rem;
+    }
+}
+
+.form-card {
+    margin-top: 1.5rem;
+    & .card-header {
+        color: #FFF!important;
+        background-color: $color-secondary;
+        font-size: 1.7rem;
+    }
+    label {
+        color: $color-secondary;
+    }
+
+    .btn-send {
+        display: block;
+        width: 40%;
+        margin: auto;
+        &:disabled {
+            background-color: $color-light!important;
+            color: $color-primary;
+        }
+    }
+}
+
+
+.btn-outline-secondary {
+    color: #FFF;
+    border-color: #FFF;
+    cursor: pointer;
+    &:hover {
+        background-color: #fff;
+        color: $color-secondary;
+    }
+}
