@@ -59,14 +59,14 @@ export class AuthService {
     return this.isLogged()
       .flatMap((isLogged:boolean) => {
         return this.getLoggedUser().map(
-          user => this.user
+          ok => this.user
         );
       })
       .catch(error => Observable.of(null));
   }
 
-  emitStatus() {
-    profile$.emit(this.user);
+  reloadProfile() {
+    this.setLogged(true);
   }
 
   login(email: string, password: string): Observable<boolean> {

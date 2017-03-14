@@ -1,3 +1,4 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CanActivateAdminService } from './shared/can-activate/can-activate-admin.service';
 import { CanActivateLoggedService } from './shared/can-activate/can-activate-logged.service';
 import { AuthConfig, AuthHttp } from 'angular2-jwt';
@@ -63,7 +64,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     HttpModule,
     MenuModule,
     SharedModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot()
   ],
   providers: [
     {

@@ -22,9 +22,9 @@
                 <tr *ngFor="let user of users">
                   <td>{{ user.name }}</td>
                   <td>{{ user.email }}</td>
-                  <td><input type="checkbox" class="form-check-input" [checked]="user.admin"></td>
-                  <td><input type="checkbox" class="form-check-input" [checked]="user.is_active"></td>
-                  <td><button class="btn btn-link">Cambiar password</button></td>
+                  <td><input type="checkbox" class="form-check-input" [checked]="user.admin" (change)="changeAdministrator(user)"></td>
+                  <td><input type="checkbox" class="form-check-input" [checked]="user.is_active" (change)="changeActive(user)"></td>
+                  <td><button class="btn btn-link" (click)="changePassword(user)">Cambiar password</button></td>
                 </tr>
               </tbody>
             </table>

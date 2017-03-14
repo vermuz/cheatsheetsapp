@@ -73,6 +73,10 @@ $color-danger: #FF4100;
     &:hover, &:active, &:focus {
         text-decoration: none
     }
+    &:disabled {
+        background-color: $color-light!important;
+        color: $color-secondary;
+    }
 }
 
 .btn-white {
