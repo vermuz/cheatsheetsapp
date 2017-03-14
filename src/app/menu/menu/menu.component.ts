@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
       (user: IUser) => {
         this.loggedAdmin = false;
         this.user = user;
-        if(user && user.roles.indexOf('ROLE_ADMIN') >= 0){
+        if(user && user.admin){
           this.loggedAdmin = true;
         }
       }

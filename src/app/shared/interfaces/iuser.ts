@@ -7,7 +7,7 @@ export interface IUser {
     password?: string;
     name: string;
     is_active?: boolean;
-    roles?: string[];
+    admin?: boolean;
     register_at: string;
     cheatsheets?: ICheatsheet[];
 }

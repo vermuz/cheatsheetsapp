@@ -13,7 +13,7 @@ export class CanActivateAdminService  implements CanActivate {
   ): boolean | Observable<boolean> | Promise<boolean> {
     return this._authService.getProfile()
     .map(user => {
-      if(user && user.roles.indexOf('ROLE_ADMIN') >= 0) return true;
+      if(user && user.admin) return true;
       this.router.navigate(['/auth/login']);
     })
     .catch(error => this.router.navigate(['/auth/login']))
