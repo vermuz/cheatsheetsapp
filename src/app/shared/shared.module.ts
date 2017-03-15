@@ -1,3 +1,4 @@
+import { ProfileResolveService } from './resolve/profile-resolve.service';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './providers/user.service';
 import { CanActivateAdminService } from './can-activate/can-activate-admin.service';
@@ -30,7 +31,8 @@ export class SharedModule {
       CheatsheetService,
       CanActivateLoginService,
       CanActivateLoggedService,
-      CanActivateAdminService
+      CanActivateAdminService,
+      ProfileResolveService
     ]
   };
 }

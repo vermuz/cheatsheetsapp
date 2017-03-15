@@ -18,6 +18,21 @@ export class UserService {
     }).catch((error) => Observable.throw("Error getting users list"));
   }
 
+  saveName(name: string) {
+    return this._authHttp.put(SERVER_URL + '/users/name', {name})
+    .map((res: Response) => <IUser>res.json().user)
+    .catch((error) => Observable.throw("Error saving user"));
+  }
+
+  getProfile(): Observable<IUser> {
+    return this._authHttp.get(SERVER_URL + '/users/profile')
+    .map(
+      res => {
+        return <IUser>res.json().user;
+      }
+    ).catch((error) => Observable.throw("Error getting profile"));
+  }
+
   password(id: number, password: string) {
     return this._authHttp.put(SERVER_URL + '/users/' + id + '/password', {password})
     .map((response: Response) => true)

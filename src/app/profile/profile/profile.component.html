@@ -1,3 +1,53 @@
-<p>
-  profile works!
-</p>
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12">
+      <main>
+        <div class="card form-card">
+          <div class="card-header">
+            Usuario {{ user.name }}
+          </div>
+          <div class="card-block">
+            <table class="table">
+              <tbody>
+                <tr class="row">
+                  <th scope="row" class="col-3">Id</th>
+                  <td class="col-9">{{ user.id }}</td>
+                </tr>
+                <tr class="row">
+                  <th scope="row" class="col-3">email</th>
+                  <td class="col-9">{{ user.email }}</td>
+                </tr>
+                <tr class="row" *ngIf="!editMode">
+                  <th scope="row" class="col-3">Nombre</th>
+                  <td class="col-9 d-flex justify-content-between">
+                    {{ user.name }}
+                    <button class="btn btn-secondary" (click)="editMode=true">Cambiar</button>
+                  </td>
+                </tr>
+                <tr class="row" *ngIf="editMode">
+                  <th scope="row" class="col-3">Name</th>
+                  <td class="col-9 d-flex justify-content-between">
+                    <input class="form-control" type="name" name="name" [(ngModel)]="user.name" #nameModel="ngModel" autofocus required>
+                    <button class="btn btn-secondary" (click)="saveName()" [disabled]="nameModel.invalid">Guardar</button>
+                  </td>
+                </tr>
+                <tr class="row">
+                  <th scope="row" class="col-3">Registro</th>
+                  <td class="col-9">{{ user.register_at | date:'dd/MM/yyyy' }}</td>
+                </tr>
+                <tr class="row">
+                  <th scope="row" class="col-3">Admin</th>
+                  <td class="col-9">{{ user.admin?'Si':'No' }}</td>
+                </tr>
+                <tr class="row">
+                  <th scope="row" class="col-3"></th>
+                  <td class="col-9"><button class="btn btn-secondary" (click)="changePassword()">Cambiar password</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
