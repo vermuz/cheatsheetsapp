@@ -1,3 +1,28 @@
-<p>
-  language-list works!
-</p>
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-12">
+      <main>
+        <div class="card form-card">
+          <div class="card-header d-flex justify-content-between">
+            Lenguages
+            <button class="btn btn-outline-secondary" (click)="create()">Añadir nuevo</button>
+          </div>
+          <div class="card-block">
+            <table class="table">
+              <tbody>
+                <tr class="row" *ngFor="let language of languages">
+                  <td class="col-1">{{ language.extension }}</td>
+                  <td class="col-md-7 col-sm-6">{{ language.name }}</td>
+                  <td class="col-md-4 col-sm-5 d-flex justify-content-around">
+                    <button class="btn btn-secondary" (click)="edit(language)">Editar</button>
+                    <button class="btn btn-outline-danger" (click)="delete(language)">Borrar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

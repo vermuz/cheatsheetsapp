@@ -1,0 +1,11 @@
+<div class="modal-header bg-secondary text-white">
+  <h4 class="modal-title">{{ title }}</h4>
+</div>
+<div class="modal-body">
+  <input class="form-control" type="text" name="name" [(ngModel)]="text" #textModel="ngModel" required>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-danger" (click)="activeModal.dismiss()">Cancelar</button>
+  <button type="button" class="btn btn-secondary" (click)="activeModal.close(text)" [disabled]="textModel.invalid">Guardar</button>
+</div>

@@ -1,3 +1,27 @@
-<p>
-  category-list works!
-</p>
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-12">
+      <main>
+        <div class="card form-card">
+          <div class="card-header d-flex justify-content-between">
+            Categorías
+            <button class="btn btn-outline-secondary" (click)="create()">Añadir nueva</button>
+          </div>
+          <div class="card-block">
+            <table class="table">
+              <tbody>
+                <tr class="row" *ngFor="let category of categories">
+                  <td class="col-md-8 col-sm-7">{{ category.name }}</td>
+                  <td class="col-md-4 col-sm-5 d-flex justify-content-around">
+                    <button class="btn btn-secondary" (click)="edit(category)">Editar</button>
+                    <button class="btn btn-outline-danger" (click)="delete(category)">Borrar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

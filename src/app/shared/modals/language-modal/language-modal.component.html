@@ -1,0 +1,15 @@
+<div class="modal-header bg-secondary text-white">
+  <h4 class="modal-title">{{ title }}</h4>
+</div>
+<div class="modal-body">
+  <label>Nombre</label>
+  <input class="form-control" type="text" name="name" [(ngModel)]="language.name" #nameModel="ngModel" required>
+</div>
+<div class="modal-body">
+  <label>Extension</label>
+  <input class="form-control" type="text" name="extension" [(ngModel)]="language.extension" #extensionModel="ngModel" required>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-danger" (click)="activeModal.dismiss()">Cancelar</button>
+  <button type="button" class="btn btn-secondary" (click)="activeModal.close()" [disabled]="nameModel.invalid || extensionModel.invalid">Guardar</button>
+</div>

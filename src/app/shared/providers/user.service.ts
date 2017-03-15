@@ -24,6 +24,12 @@ export class UserService {
     .catch((error) => Observable.throw("Error saving user"));
   }
 
+  create(user: IUser) {
+    return this._authHttp.post(SERVER_URL + '/users', user)
+    .map((res: Response) => <IUser>res.json().user)
+    .catch((error) => Observable.throw("Error create user"));
+  }
+
   getProfile(): Observable<IUser> {
     return this._authHttp.get(SERVER_URL + '/users/profile')
     .map(
