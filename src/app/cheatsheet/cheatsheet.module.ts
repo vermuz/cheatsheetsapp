@@ -1,3 +1,4 @@
+import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -25,6 +26,7 @@ const cheatsheetRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     RouterModule.forChild(cheatsheetRoutes)
   ],
   declarations: [CheatsheetListComponent, CheatsheetNewComponent, CheatsheetEditComponent],

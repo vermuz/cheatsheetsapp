@@ -13,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cheatsheet-new.component.scss']
 })
 export class CheatsheetNewComponent implements OnInit {
+  pruebas: string = 'asd';
   cheatsheet: ICheatsheet = {
     title: '',
     comment: '',
@@ -48,5 +49,8 @@ export class CheatsheetNewComponent implements OnInit {
       error => console.log(error)
     );
   }
+
+  keyupHandlerFunction($event){}
+
 
 }

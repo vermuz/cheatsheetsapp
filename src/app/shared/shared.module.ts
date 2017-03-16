@@ -13,15 +13,16 @@ import { CommonModule } from '@angular/common';
 import { PasswordModalComponent } from './modals/password-modal/password-modal.component';
 import { InputModalComponent } from './modals/input-modal/input-modal.component';
 import { LanguageModalComponent } from './modals/language-modal/language-modal.component';
+import { TinymceComponent } from './tinymce/tinymce.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
-  declarations: [PasswordModalComponent, InputModalComponent, LanguageModalComponent],
-  exports: [PasswordModalComponent, InputModalComponent, LanguageModalComponent],
-  entryComponents: [PasswordModalComponent, InputModalComponent, LanguageModalComponent]
+  declarations: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent],
+  exports: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent],
+  entryComponents: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent]
 })
 export class SharedModule { 
   static forRoot(): ModuleWithProviders {
