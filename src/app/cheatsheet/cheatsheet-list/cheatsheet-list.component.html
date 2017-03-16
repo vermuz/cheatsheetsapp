@@ -1,3 +1,35 @@
-<p>
-  cheatsheet-list works!
-</p>
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col">
+      <main>
+        <div class="card form-card">
+          <div class="card-header d-flex justify-content-between">
+            Cheatsheets
+            <button class="btn btn-outline-secondary" [routerLink]="['/cheatsheets/new']">Añadir nueva</button>
+          </div>
+          <div class="card-block">
+            <table class="table">
+              <thead>
+                <tr class="row">
+                  <th class="col-md-4">Categoría</th>
+                  <th class="col-md-4 col-lg-6">Título</th>
+                  <th class="col-md-4 col-lg-2">  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="row" *ngFor="let cheatsheet of cheatsheets">
+                  <td class="col-md-4">{{ cheatsheet.category.name }}</td>
+                  <td class="col-md-4 col-lg-6">{{ cheatsheet.title }}</td>
+                  <td class="col-md-4 col-lg-2 d-flex justify-content-around">
+                    <button class="btn btn-secondary" [routerLink]="['/cheatsheets/edit', cheatsheet.id]">Editar</button>
+                    <button class="btn btn-outline-danger" (click)="delete(cheatsheet)">Borrar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
