@@ -24,7 +24,7 @@ export class TinymceComponent implements AfterViewInit, OnDestroy {
       skin_url: 'assets/skins/custom',
       setup: editor => {
         this.editor = editor;
-        editor.on('keyup', () => {
+        editor.on('blur', () => {
           const content = editor.getContent();
           this.onEditorKeyup.emit(content);
         });

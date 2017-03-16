@@ -50,7 +50,9 @@ export class CheatsheetNewComponent implements OnInit {
     );
   }
 
-  keyupHandlerFunction($event){}
+  keyupHandlerFunction(text: string){
+    this.cheatsheet.comment = text;
+  }
 
 
 }
