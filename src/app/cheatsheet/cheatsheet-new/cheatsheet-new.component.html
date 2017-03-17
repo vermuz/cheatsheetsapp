@@ -27,11 +27,12 @@
           <div class="form-group">
             <label>Comentario</label>
             <textarea name="comment" [(ngModel)]="cheatsheet.comment" #commentModel="ngModel" required hidden></textarea>
-            <tinymce [elementId]="'myeditor'" (onEditorKeyup)="keyupHandlerFunction($event)"></tinymce>
+            <tinymce [elementId]="'myeditor'" (onEditorKeyup)="keyupTinyEditor($event)"></tinymce>
           </div>
           <div class="form-group">
             <label>Código</label>
-            <input class="form-control" type="text" name="code" [(ngModel)]="cheatsheet.code" #codeModel="ngModel" required>
+            <textarea name="code" [(ngModel)]="cheatsheet.code" #codeModel="ngModel" required hidden></textarea>
+            <ace-editor (onEditorChange)="changeAceEditor($event)"></ace-editor>
           </div>
           <div class="form-group">
             <input class="btn btn-secondary btn-send" type="submit" [disabled]="formNewCheatsheet.invalid" value="Guardar">
@@ -41,5 +42,3 @@
     </div>
   </div>
 </div>
-
-{{ cheatsheet.comment }}

@@ -4,8 +4,7 @@ declare var tinymce: any;
 
 @Component({
   selector: 'tinymce',
-  templateUrl: './tinymce.component.html',
-  styleUrls: ['./tinymce.component.scss']
+  template: '<textarea id="{{elementId}}"></textarea>'
 })
 export class TinymceComponent implements AfterViewInit, OnDestroy {
   @Input() elementId: String;
@@ -21,10 +20,10 @@ export class TinymceComponent implements AfterViewInit, OnDestroy {
       height: 200,
       plugins: ['link', 'paste', 'table'],
       content_style: ".mce-content-body {font-size:16px;font-family:'Helvetica Neue',Arial,sans-serif;}",
-      skin_url: 'assets/skins/custom',
+      skin_url: '/assets/skins/custom',
       setup: editor => {
         this.editor = editor;
-        editor.on('blur', () => {
+        editor.on('keyup', () => {
           const content = editor.getContent();
           this.onEditorKeyup.emit(content);
         });

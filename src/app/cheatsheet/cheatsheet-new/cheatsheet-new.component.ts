@@ -50,9 +50,11 @@ export class CheatsheetNewComponent implements OnInit {
     );
   }
 
-  keyupHandlerFunction(text: string){
+  keyupTinyEditor(text: string){
     this.cheatsheet.comment = text;
   }
 
-
+  changeAceEditor(text: string){
+    this.cheatsheet.code = text;
+  }
 }

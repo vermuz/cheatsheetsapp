@@ -1,1 +1,1 @@
-export const SERVER_URL = "http://172.16.184.129/app_dev.php";
+export const SERVER_URL = "http://192.168.1.187/app_dev.php";
