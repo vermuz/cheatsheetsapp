@@ -8,9 +8,9 @@ declare var tinymce: any;
 })
 export class TinymceComponent implements AfterViewInit, OnDestroy {
   @Input() elementId: String;
+  @Input() content: string = '';
   @Output() onEditorKeyup = new EventEmitter<any>();
-
-  editor;
+  editor: any;
 
   ngAfterViewInit() {
     tinymce.init({
@@ -29,6 +29,9 @@ export class TinymceComponent implements AfterViewInit, OnDestroy {
         });
       },
     });
+
+    tinymce.activeEditor.setContent(this.content);
+    
   }
 
   ngOnDestroy() {

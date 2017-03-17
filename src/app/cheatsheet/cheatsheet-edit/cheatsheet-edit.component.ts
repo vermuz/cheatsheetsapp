@@ -31,18 +31,31 @@ export class CheatsheetEditComponent implements OnInit {
     this.cheatsheet = this.route.snapshot.data['cheatsheet'];
     
     this._categoryService.getAll().subscribe(
-      categories => this.categories = categories,
+      categories => {
+        this.categories = categories;
+        let temp = categories.filter(c => {
+          if(this.cheatsheet.category.id == c.id) return c;
+        });
+
+        this.cheatsheet.category = temp[0];
+      },
       error => console.log(error)
     );
 
     this._languageService.getAll().subscribe(
-      languages => this.languages = languages,
+      languages => {
+        this.languages = languages;
+        let temp = languages.filter(l => {
+          if(this.cheatsheet.language.id == l.id) return l;
+        });
+
+        this.cheatsheet.language = temp[0];
+      },
       error => console.log(error)
     );
   }
 
   update() {
-    console.log(this.cheatsheet);
     this._cheatsheetService.edit(this.cheatsheet).subscribe(
       cheatsheet => this.router.navigate(['/cheatsheets']),
       error => console.log(error)

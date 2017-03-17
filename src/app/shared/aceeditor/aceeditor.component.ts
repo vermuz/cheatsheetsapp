@@ -63,7 +63,6 @@ editor: any;
       highlightActiveLine: this.highlightActiveLine,
       printMarginColumn: false
     });
-    console.log(this.extension);
     let mode = this.modelist.getModeForPath('.' + this.extension).mode;
     this.editor.getSession().setMode(mode);
     

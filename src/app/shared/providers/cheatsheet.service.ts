@@ -38,7 +38,10 @@ export class CheatsheetService {
   }
 
   edit(cheatsheet: ICheatsheet): Observable<ICheatsheet> {
-    return Observable.throw('');
+    console.log(cheatsheet);
+    return this._authHttp.put(SERVER_URL + '/cheatsheets/' + cheatsheet.id, cheatsheet)
+    .map((response: Response) => <ICheatsheet>response.json().cheatsheet)
+    .catch((error) => Observable.throw("Error edit cheatsheet"));
   }
 
   delete(id:number): Observable<boolean> {
