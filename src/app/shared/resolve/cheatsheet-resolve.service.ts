@@ -1,23 +1,23 @@
 import { Observable } from 'rxjs/Rx';
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
-import { UserService } from '../providers/user.service';
-import { IUser } from '../interfaces/iuser';
 import { Resolve } from '@angular/router/src/interfaces';
 import { Injectable } from '@angular/core';
+import { ICheatsheet } from "../interfaces/icheatsheet";
+import { CheatsheetService } from "../providers/cheatsheet.service";
 
 @Injectable()
-export class ProfileResolveService implements Resolve<IUser> {
+export class CheatsheetResolveService implements Resolve<ICheatsheet> {
 
    constructor(
-    private router:Router,
-    private _userService: UserService
+    private _cheatsheetService: CheatsheetService,
+    private router:Router
     ) { }
 
     resolve(
       route: ActivatedRouteSnapshot, 
       state: RouterStateSnapshot
-      ): IUser | Observable<IUser> | Promise<IUser> {
-      return this._userService.getProfile()
+      ): ICheatsheet | Observable<ICheatsheet> | Promise<ICheatsheet> {
+      return this._cheatsheetService.getOnly(route.params['id'])
       .catch(error => {
         this.router.navigate(['/home']);
         return Observable.of(null)

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { CheatsheetListComponent } from './cheatsheet-list/cheatsheet-list.component';
 import { CheatsheetNewComponent } from './cheatsheet-new/cheatsheet-new.component';
 import { CheatsheetEditComponent } from './cheatsheet-edit/cheatsheet-edit.component';
+import { CheatsheetResolveService } from "../shared/resolve/cheatsheet-resolve.service";
 
 const cheatsheetRoutes: Routes = [
   {
@@ -18,7 +19,8 @@ const cheatsheetRoutes: Routes = [
   },
   {
     path: 'edit/:id',
-    component: CheatsheetEditComponent
+    component: CheatsheetEditComponent,
+    resolve: { cheatsheet: CheatsheetResolveService }
   }
 ];
 

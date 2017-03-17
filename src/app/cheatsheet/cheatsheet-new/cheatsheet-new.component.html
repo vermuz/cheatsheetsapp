@@ -2,7 +2,7 @@
   <div class="col-xl-10 offset-xl-1 col-md-12">
     <div class="card form-card">
       <div class="card-header">
-        Nueva Cheatsheets
+        Nueva Cheatsheet
       </div>
       <div class="card-block">
         <form #formNewCheatsheet="ngForm" novalidate (ngSubmit)="create()">
@@ -13,14 +13,12 @@
           <div class="form-group">
             <label>Categoría</label>
             <select class="form-control" name="category" [(ngModel)]="cheatsheet.category" #categoryModel="ngModel" required>
-              <option></option>
               <option *ngFor="let category of categories" [ngValue]="category">{{ category.name }}</option>
             </select>
           </div>
           <div class="form-group">
             <label>Lenguaje</label>
-            <select class="form-control" name="language" [(ngModel)]="cheatsheet.language" #languageModel="ngModel" required>
-              <option></option>
+            <select class="form-control" name="language" [(ngModel)]="cheatsheet.language" #languageModel="ngModel" required (change)="aceEditorSetExtension()">
               <option *ngFor="let language of languages" [ngValue]="language">{{ language.name }}</option>
             </select>
           </div>
@@ -32,7 +30,7 @@
           <div class="form-group">
             <label>Código</label>
             <textarea name="code" [(ngModel)]="cheatsheet.code" #codeModel="ngModel" required hidden></textarea>
-            <ace-editor (onEditorChange)="changeAceEditor($event)"></ace-editor>
+            <ace-editor [highlightActiveLine]="false" [extension]="cheatsheet.language.extension" (onEditorChange)="changeAceEditor($event)"></ace-editor>
           </div>
           <div class="form-group">
             <input class="btn btn-secondary btn-send" type="submit" [disabled]="formNewCheatsheet.invalid" value="Guardar">

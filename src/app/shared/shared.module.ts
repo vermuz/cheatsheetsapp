@@ -15,6 +15,8 @@ import { InputModalComponent } from './modals/input-modal/input-modal.component'
 import { LanguageModalComponent } from './modals/language-modal/language-modal.component';
 import { TinymceComponent } from './tinymce/tinymce.component';
 import { AceeditorComponent } from './aceeditor/aceeditor.component';
+import { AceEditorEventsService } from "./aceeditor/ace-editor-events";
+import { CheatsheetResolveService } from "./resolve/cheatsheet-resolve.service";
 
 @NgModule({
   imports: [
@@ -35,10 +37,12 @@ export class SharedModule {
       UserService,
       CheatsheetService,
       LanguageService,
+      AceEditorEventsService,
       CanActivateLoginService,
       CanActivateLoggedService,
       CanActivateAdminService,
-      ProfileResolveService
+      ProfileResolveService,
+      CheatsheetResolveService
     ]
   };
 }

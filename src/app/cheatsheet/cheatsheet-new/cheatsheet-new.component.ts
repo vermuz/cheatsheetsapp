@@ -6,6 +6,7 @@ import { ILanguage } from '../../shared/interfaces/ilanguage';
 import { ICategory } from '../../shared/interfaces/icategory';
 import { ICheatsheet } from '../../shared/interfaces/icheatsheet';
 import { Component, OnInit } from '@angular/core';
+import { AceEditorEventsService } from "../../shared/aceeditor/ace-editor-events";
 
 @Component({
   selector: 'app-cheatsheet-new',
@@ -13,7 +14,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cheatsheet-new.component.scss']
 })
 export class CheatsheetNewComponent implements OnInit {
-  pruebas: string = 'asd';
   cheatsheet: ICheatsheet = {
     title: '',
     comment: '',
@@ -28,7 +28,8 @@ export class CheatsheetNewComponent implements OnInit {
     private _categoryService: CategoryService,
     private _languageService: LanguageService,
     private _cheatsheetService: CheatsheetService,
-    private router: Router
+    private router: Router,
+    private _aceEditorEventsService: AceEditorEventsService
   ) { }
 
   ngOnInit() {
@@ -56,5 +57,13 @@ export class CheatsheetNewComponent implements OnInit {
 
   changeAceEditor(text: string){
     this.cheatsheet.code = text;
+  }
+
+  aceEditorSetOptions() {
+    this._aceEditorEventsService.getChange().emit();
+  }
+
+  aceEditorSetExtension() {
+    this._aceEditorEventsService.getChangeExtension().emit(this.cheatsheet.language.extension);
   }
 }

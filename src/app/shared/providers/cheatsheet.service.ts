@@ -24,6 +24,13 @@ export class CheatsheetService {
     }).catch((error) => Observable.throw("Error getting cheatsheets"));
   }
 
+  getOnly(id: number): Observable<ICheatsheet> {
+    return this.http.get(SERVER_URL + '/cheatsheets/' + id)
+    .map((response: Response) => {
+      return <ICheatsheet>response.json().cheatsheet;
+    }).catch((error) => Observable.throw("Error getting cheatsheet"));
+  }
+
   create(cheatsheet: ICheatsheet): Observable<ICheatsheet> {
     return this._authHttp.post(SERVER_URL + '/cheatsheets', cheatsheet)
     .map((response: Response) => <ICheatsheet>response.json().cheatsheet)
