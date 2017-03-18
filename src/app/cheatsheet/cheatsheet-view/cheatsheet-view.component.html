@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-lg-12 col-xl-8 offset-xl-2">
+    <div class="card form-card">
+      <div class="card-header">
+        <h1 class="card-title">{{ cheatsheet.category.name }} - <small>{{ cheatsheet.title }}</small></h1>
+        <h6 class="card-subtitle mt-4 mb-2 text-white">lenguaje: {{ cheatsheet.language.name }}</h6>
+      </div>
+      <div class="card-block">
+        <div>
+          <h3 class="mt-2 mb-2">{{ cheatsheet.title }}</h3>
+        </div>
+        <div class="m-4 text-muted" [innerHTML]="cheatsheet.comment"></div>
+        <div style="position: relative;">
+          <button class="btn btn-link btn-copy"><i class="fa fa-clone" aria-hidden="true"></i></button>
+          <ace-editor [code]="cheatsheet.code" [readOnly]="true" [highlightActiveLine]="false" [extension]="cheatsheet.language.extension"></ace-editor>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

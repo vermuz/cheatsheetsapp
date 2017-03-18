@@ -36,6 +36,8 @@ editor: any;
     
     this.setOptions();
     this.editor.setValue(this.code);
+    this.editor.gotoLine(0);
+    this.editor.blur();
 
     this.editor.on("change", () => {
       this.onEditorChange.emit(this.editor.getValue());

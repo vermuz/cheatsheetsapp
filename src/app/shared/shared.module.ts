@@ -17,13 +17,14 @@ import { TinymceComponent } from './tinymce/tinymce.component';
 import { AceeditorComponent } from './aceeditor/aceeditor.component';
 import { AceEditorEventsService } from "./aceeditor/ace-editor-events";
 import { CheatsheetResolveService } from "./resolve/cheatsheet-resolve.service";
+import { CheatsheetPipe } from './pipes/cheatsheet.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
-  declarations: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent, AceeditorComponent],
+  declarations: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent, AceeditorComponent, CheatsheetPipe],
   exports: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent, AceeditorComponent],
   entryComponents: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent, AceeditorComponent]
 })

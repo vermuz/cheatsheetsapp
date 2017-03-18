@@ -7,6 +7,7 @@ import { CheatsheetListComponent } from './cheatsheet-list/cheatsheet-list.compo
 import { CheatsheetNewComponent } from './cheatsheet-new/cheatsheet-new.component';
 import { CheatsheetEditComponent } from './cheatsheet-edit/cheatsheet-edit.component';
 import { CheatsheetResolveService } from "../shared/resolve/cheatsheet-resolve.service";
+import { CheatsheetViewComponent } from './cheatsheet-view/cheatsheet-view.component';
 
 const cheatsheetRoutes: Routes = [
   {
@@ -21,6 +22,11 @@ const cheatsheetRoutes: Routes = [
     path: 'edit/:id',
     component: CheatsheetEditComponent,
     resolve: { cheatsheet: CheatsheetResolveService }
+  },
+  {
+    path: ':id',
+    component: CheatsheetViewComponent,
+    resolve: { cheatsheet: CheatsheetResolveService }
   }
 ];
 
@@ -31,7 +37,7 @@ const cheatsheetRoutes: Routes = [
     SharedModule,
     RouterModule.forChild(cheatsheetRoutes)
   ],
-  declarations: [CheatsheetListComponent, CheatsheetNewComponent, CheatsheetEditComponent],
+  declarations: [CheatsheetListComponent, CheatsheetNewComponent, CheatsheetEditComponent, CheatsheetViewComponent],
   exports: [RouterModule]
 })
 export class CheatsheetModule { }

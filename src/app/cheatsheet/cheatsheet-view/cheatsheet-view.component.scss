@@ -1,0 +1,10 @@
+.btn-copy {
+    position: absolute; 
+    top: .2rem; 
+    right: .2rem; 
+    z-index: 99;
+    color: #333;
+    &:focus, &:active {
+        
+    }
+}

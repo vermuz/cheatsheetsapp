@@ -30,7 +30,7 @@
           <div class="form-group">
             <label>Código</label>
             <textarea name="code" [(ngModel)]="cheatsheet.code" #codeModel="ngModel" required hidden></textarea>
-            <ace-editor [highlightActiveLine]="false" [extension]="cheatsheet.language.extension" (onEditorChange)="changeAceEditor($event)"></ace-editor>
+            <ace-editor [highlightActiveLine]="false" (onEditorChange)="changeAceEditor($event)"></ace-editor>
           </div>
           <div class="form-group">
             <input class="btn btn-secondary btn-send" type="submit" [disabled]="formNewCheatsheet.invalid" value="Guardar">
