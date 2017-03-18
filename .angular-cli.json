@@ -29,8 +29,8 @@
         "../node_modules/tinymce/plugins/link/plugin.js",
         "../node_modules/tinymce/plugins/paste/plugin.js",
         "../node_modules/tinymce/plugins/table/plugin.js",
-        "../node_modules/ace-min-noconflict/ace.js",
-        "../node_modules/ace-min-noconflict/ext-modelist.js"
+        "assets/ace-min-noconflict/ace.js",
+        "assets/ace-min-noconflict/ext-modelist.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

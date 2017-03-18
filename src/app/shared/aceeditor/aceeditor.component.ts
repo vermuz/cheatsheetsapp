@@ -13,7 +13,7 @@ declare var ace: any;
 export class AceeditorComponent implements OnInit {
 editor: any;
   modelist: any;
-  @Input() code: string;
+  @Input() code: string = "";
   @Input() minLines: any = 10;
   @Input() maxLines:any = Infinity;
   @Input() fontSize:number = 16;
@@ -29,7 +29,7 @@ editor: any;
   constructor(private _aceEditorEventsService: AceEditorEventsService) { }
 
   ngOnInit() {
-    ace.config.set('basePath', '../node_modules/ace-min-noconflict');
+    ace.config.set('basePath', 'assets/ace-min-noconflict');
     ace.require("ace/edit_session").EditSession.prototype.$useWorker=false;
     this.editor = ace.edit("ace-editor");
     this.modelist = ace.require("ace/ext/modelist");

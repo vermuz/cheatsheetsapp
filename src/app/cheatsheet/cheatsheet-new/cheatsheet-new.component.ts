@@ -59,10 +59,6 @@ export class CheatsheetNewComponent implements OnInit {
     this.cheatsheet.code = text;
   }
 
-  aceEditorSetOptions() {
-    this._aceEditorEventsService.getChange().emit();
-  }
-
   aceEditorSetExtension() {
     this._aceEditorEventsService.getChangeExtension().emit(this.cheatsheet.language.extension);
   }
