@@ -14,6 +14,7 @@ const MAX_CHEATSHETS_LATEST = 10;
 export class HomeComponent implements OnInit {
   categories: ICategory[];
   cheatsheetsLatest: ICheatsheet[];
+  filterSearch:string = '';
 
   constructor(
     private _categoryService: CategoryService,

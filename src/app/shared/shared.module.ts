@@ -1,3 +1,4 @@
+import { CategoryResolveService } from './resolve/category-resolve.service';
 import { LanguageService } from './providers/language.service';
 import { ProfileResolveService } from './resolve/profile-resolve.service';
 import { FormsModule } from '@angular/forms';
@@ -18,14 +19,15 @@ import { AceeditorComponent } from './aceeditor/aceeditor.component';
 import { AceEditorEventsService } from "./aceeditor/ace-editor-events";
 import { CheatsheetResolveService } from "./resolve/cheatsheet-resolve.service";
 import { CheatsheetPipe } from './pipes/cheatsheet.pipe';
+import { CategoryPipe } from './pipes/category.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
-  declarations: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent, AceeditorComponent, CheatsheetPipe],
-  exports: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent, AceeditorComponent],
+  declarations: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent, AceeditorComponent, CheatsheetPipe, CategoryPipe],
+  exports: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent, AceeditorComponent, CheatsheetPipe, CategoryPipe],
   entryComponents: [PasswordModalComponent, InputModalComponent, LanguageModalComponent, TinymceComponent, AceeditorComponent]
 })
 export class SharedModule { 
@@ -43,7 +45,8 @@ export class SharedModule {
       CanActivateLoggedService,
       CanActivateAdminService,
       ProfileResolveService,
-      CheatsheetResolveService
+      CheatsheetResolveService,
+      CategoryResolveService
     ]
   };
 }

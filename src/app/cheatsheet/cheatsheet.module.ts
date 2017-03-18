@@ -1,3 +1,4 @@
+import { CategoryResolveService } from '../shared/resolve/category-resolve.service';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -8,6 +9,7 @@ import { CheatsheetNewComponent } from './cheatsheet-new/cheatsheet-new.componen
 import { CheatsheetEditComponent } from './cheatsheet-edit/cheatsheet-edit.component';
 import { CheatsheetResolveService } from "../shared/resolve/cheatsheet-resolve.service";
 import { CheatsheetViewComponent } from './cheatsheet-view/cheatsheet-view.component';
+import { CheatsheetCategoryListComponent } from './cheatsheet-category-list/cheatsheet-category-list.component';
 
 const cheatsheetRoutes: Routes = [
   {
@@ -24,6 +26,11 @@ const cheatsheetRoutes: Routes = [
     resolve: { cheatsheet: CheatsheetResolveService }
   },
   {
+    path: 'category/:id',
+    component: CheatsheetCategoryListComponent,
+    resolve: { category: CategoryResolveService }
+  },
+  {
     path: ':id',
     component: CheatsheetViewComponent,
     resolve: { cheatsheet: CheatsheetResolveService }
@@ -37,7 +44,7 @@ const cheatsheetRoutes: Routes = [
     SharedModule,
     RouterModule.forChild(cheatsheetRoutes)
   ],
-  declarations: [CheatsheetListComponent, CheatsheetNewComponent, CheatsheetEditComponent, CheatsheetViewComponent],
+  declarations: [CheatsheetListComponent, CheatsheetNewComponent, CheatsheetEditComponent, CheatsheetViewComponent, CheatsheetCategoryListComponent],
   exports: [RouterModule]
 })
 export class CheatsheetModule { }

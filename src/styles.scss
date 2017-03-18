@@ -2,7 +2,7 @@
 @import 'theme';
 
 .logo {
-    background: url("/assets/images/logo.svg");
+    background: url("/assets/images/logo-cheatsheets.svg");
     width: 21rem;
     min-height: 4rem;
     
@@ -27,8 +27,8 @@
 
 .card-asside {
     & .card-header {
-        color: #FFF;
-        background-color: $color-primary;
+        color: $color-secondary;
+        background-color: $color-light;
         font-size: 1.2rem;
     }
 }

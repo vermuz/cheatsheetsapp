@@ -24,6 +24,13 @@ export class CategoryService {
     }).catch((error) => Observable.throw("Error getting categories"));
   }
 
+  getOnly(id: number): Observable<ICategory> {
+    return this.http.get(SERVER_URL + '/categories/' + id)
+    .map((response: Response) => {
+      return <ICategory>response.json().category;
+    }).catch((error) => Observable.throw("Error getting category"));
+  }
+
   create(name: string): Observable<ICategory> {
     return this._authHttp.post(SERVER_URL + '/categories', {name})
     .map((response: Response) => <ICategory>response.json().category)

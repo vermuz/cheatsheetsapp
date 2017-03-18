@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheatsheetListComponent implements OnInit {
   cheatsheets: ICheatsheet[];
+  filterSearch: string = '';
 
   constructor(private _cheatsheetService: CheatsheetService) { }
 

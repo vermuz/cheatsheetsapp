@@ -1,0 +1,25 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-md-12 col-lg-8 offset-lg-2">
+      <main>
+        <div class="mb-4">
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon bg-light color-secondary"><i class="fa fa-search" aria-hidden="true"></i></div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" name="filterSearch" [(ngModel)]="filterSearch" placeholder="Buscar...">
+          </div>
+        </div>
+        <div class="card card-category mb-4">
+          <div class="card-header" [routerLink]="['/cheatsheets/category',category.id]">
+            {{ category.name }}
+          </div>
+          <div class="card-block">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-action" *ngFor="let cheatsheet of category.cheatsheets | cheatsheetFilter:filterSearch"
+                [routerLink]="['/cheatsheets',cheatsheet.id]">{{ cheatsheet.title }}</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
