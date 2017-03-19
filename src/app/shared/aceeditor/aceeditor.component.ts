@@ -21,6 +21,7 @@ editor: any;
   @Input() readOnly: boolean = false;
   @Input() printMargin: boolean = false;
   @Input() showGutter: boolean = true;
+  @Input() showLineNumbers: boolean = true;
   @Input() highlightGutterLine: boolean = false;
   @Input() highlightActiveLine: boolean = true;
   @Input() extension: string = 'txt';
@@ -61,6 +62,7 @@ editor: any;
       readOnly: this.readOnly,
       printMargin: this.printMargin,
       showGutter: this.showGutter,
+      showLineNumbers: this.showLineNumbers,
       highlightGutterLine: this.highlightGutterLine,
       highlightActiveLine: this.highlightActiveLine,
       printMarginColumn: false

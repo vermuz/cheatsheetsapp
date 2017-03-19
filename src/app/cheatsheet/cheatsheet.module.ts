@@ -1,3 +1,4 @@
+import { CanActivateLoggedService } from '../shared/can-activate/can-activate-logged.service';
 import { CategoryResolveService } from '../shared/resolve/category-resolve.service';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
@@ -18,11 +19,13 @@ const cheatsheetRoutes: Routes = [
   },
   {
     path: 'new',
-    component: CheatsheetNewComponent
+    component: CheatsheetNewComponent,
+    canActivate: [CanActivateLoggedService]
   },
   {
     path: 'edit/:id',
     component: CheatsheetEditComponent,
+    canActivate: [CanActivateLoggedService],
     resolve: { cheatsheet: CheatsheetResolveService }
   },
   {

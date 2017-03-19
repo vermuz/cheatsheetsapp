@@ -29,8 +29,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'cheatsheets',
-    loadChildren: 'app/cheatsheet/cheatsheet.module#CheatsheetModule',
-    canActivate: [CanActivateLoggedService]
+    loadChildren: 'app/cheatsheet/cheatsheet.module#CheatsheetModule'
   },
   {
     path: 'users',

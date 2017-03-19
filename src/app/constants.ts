@@ -1,1 +1,1 @@
-export const SERVER_URL = "http://omar.local/cheatsheetsapi/web/app_dev.php";
+export const SERVER_URL = "http://";

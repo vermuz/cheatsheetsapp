@@ -12,7 +12,7 @@
         <div class="m-4 text-muted" [innerHTML]="cheatsheet.comment"></div>
         <div style="position: relative;">
           <button class="btn btn-link btn-copy"><i class="fa fa-clone" aria-hidden="true"></i></button>
-          <ace-editor [code]="cheatsheet.code" [readOnly]="true" [highlightActiveLine]="false" [extension]="cheatsheet.language.extension"></ace-editor>
+          <ace-editor [code]="cheatsheet.code" [readOnly]="true" [showLineNumbers]="false" [highlightActiveLine]="false" [extension]="cheatsheet.language.extension"></ace-editor>
         </div>
       </div>
     </div>
