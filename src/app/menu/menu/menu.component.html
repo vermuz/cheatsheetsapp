@@ -1,10 +1,11 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-    aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
 <span class="navbar-toggler-icon"></span>
 </button>
+
   <a class="logo" [routerLink]="['/home']"></a>
-  <div class="collapse navbar-collapse" id="navbarText">
+  <div class="collapse navbar-collapse" id="navbarText" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav ml-auto mr-4 my-lg-0 my-md-4" *ngIf="user">
       <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" [routerLink]="['/categories']" >Categories</a>

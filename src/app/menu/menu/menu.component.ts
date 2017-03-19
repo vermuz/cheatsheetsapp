@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
   user: IUser;
   loggedAdmin: boolean = false;
+  public isCollapsed = true;
 
   constructor(private _authService: AuthService) { }
 
@@ -32,5 +33,6 @@ export class MenuComponent implements OnInit {
 
   logout(){
     this._authService.logout();
+    this.isCollapsed = true;
   }
 }
